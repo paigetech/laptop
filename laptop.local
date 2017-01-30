@@ -84,8 +84,10 @@ fancy_echo "Installing latest java ..."
 ### end mac-components/cask-apps
 
 ###ochin specific
-fancy_echo "Install openconnect..."
+fancy_echo "Install openconnect ..."
   brew_install openconnect
+fancy_echo "Install silverlight ..."
+  brew_install silverlight
 
 fancy_echo "Downloading Maximum Awesome ..."
   git clone https://github.com/paigetech/maximum-awesome.git
