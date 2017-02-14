@@ -3,66 +3,40 @@
 
 #Paige config for laptop setup
 
-brew_cask_expand_alias() {
-  brew cask info "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
-}
-
-brew_cask_is_installed() {
-  local NAME=$(brew_cask_expand_alias "$1")
-  brew cask list -1 | grep -Fqx "$NAME"
-}
-
-brew_cask_install() {
-  if ! brew_cask_is_installed "$1"; then
-    brew_cask_install_or_upgrade "$@"
-  fi
-}
-
-brew_cask_install_or_upgrade() {
-  if brew_cask_is_installed "$1"; then
-    echo "$1 is already installed, brew cask upgrade is not yet implemented"
-  else
-    brew_cask_install_or_upgrade "$@"
-  fi
-}
-
-brew tap caskroom/cask
-brew_install_or_upgrade 'brew-cask'
-
 fancy_echo "Installing Evernote ..."
-  brew_cask_install_or_upgrade evernote
+  brew cask install evernote
 fancy_echo "Installing Skype ..."
-  brew_cask_install_or_upgrade skype
+  brew cask install skype
 fancy_echo "Installing Filezilla ..."
-  brew_cask_install_or_upgrade filezilla
+  brew cask install filezilla
 fancy_echo "Installing Better Touch Tool ..."
-  brew_cask_install_or_upgrade bettertouchtool
+  brew cask install bettertouchtool
 fancy_echo "Installing Dropbox ..."
-  brew_cask_install_or_upgrade dropbox
+  brew cask install dropbox
 fancy_echo "Installing Virtualbox ..."
-  brew_cask_install_or_upgrade virtualbox
+  brew cask install virtualbox
 fancy_echo "Installing Atom ..."
-  brew_cask_install_or_upgrade atom
+  brew cask install atom
 fancy_echo "Installing Live Reload ..."
-  brew_cask_install_or_upgrade live-reload
+  brew cask install live-reload
 fancy_echo "Installing Google Chrome ..."
-  brew_cask_install_or_upgrade google-chrome
+  brew cask install google-chrome
 fancy_echo "Installing Firefox ..."
-  brew_cask_install_or_upgrade firefox
+  brew cask install firefox
 fancy_echo "Installing Text Expander ..."
-  brew_cask_install_or_upgrade textexpander
+  brew cask install textexpander
 fancy_echo "Installing Dash ..."
-  brew_cask_install_or_upgrade dash
+  brew cask install dash
 fancy_echo "Installing Flux ..."
-  brew_cask_install_or_upgrade flux
+  brew cask install flux
 fancy_echo "Installing Slack ..."
-  brew_cask_install_or_upgrade slack
+  brew cask install slack
 fancy_echo "Installing Spotify ..."
-  brew_cask_install_or_upgrade spotify
+  brew cask install spotify
 fancy_echo "Installing Transmission ..."
-  brew_cask_install_or_upgrade transmission
+  brew cask install transmission
 fancy_echo "Installing calibre ..."
-  brew_cask_install_or_upgrade calibre
+  brew cask install calibre
 fancy_echo "Installing lftp ..."
   brew_install lftp
 fancy_echo "Installing ack ..."
@@ -72,7 +46,7 @@ fancy_echo "Installing mp3blaster..."
 fancy_echo "Installing mutt..."
   brew_install mutt
 fancy_echo "Installing vlc ..."
-  brew_cask_install_or_upgrade vlc
+  brew cask install vlc
 fancy_echo "Installing pip ..."
   sudo easy_install pip
 fancy_echo "Installing ffmpeg ..."
