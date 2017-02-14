@@ -18,8 +18,6 @@ fancy_echo "Installing Virtualbox ..."
   brew cask install virtualbox
 fancy_echo "Installing Atom ..."
   brew cask install atom
-fancy_echo "Installing Live Reload ..."
-  brew cask install live-reload
 fancy_echo "Installing Google Chrome ..."
   brew cask install google-chrome
 fancy_echo "Installing Firefox ..."
@@ -58,6 +56,8 @@ fancy_echo "Installing latest java ..."
   brew cask install java
 fancy_echo "Installing iterm ..."
   brew cask install iterm
+fancy_echo "Installing slack ..."
+  brew cask install slack
 ### end mac-components/cask-apps
 
 ###ochin specific
