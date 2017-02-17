@@ -1,79 +1,50 @@
 #!/usr/bin/env bash
 ### end common-components/bash-shebang
 
-#Paige config for laptop setup
-fancy_echo "______________ local setup ______________"
 
-fancy_echo "Installing Evernote ..."
-  brew cask install evernote
-fancy_echo "Installing Skype ..."
-  brew cask install skype
-fancy_echo "Installing Filezilla ..."
-  brew cask install filezilla
-fancy_echo "Installing Better Touch Tool ..."
-  brew cask install bettertouchtool
-fancy_echo "Installing Dropbox ..."
-  brew cask install dropbox
-fancy_echo "Installing Virtualbox ..."
-  brew cask install virtualbox
-fancy_echo "Installing Atom ..."
-  brew cask install atom
-fancy_echo "Installing Google Chrome ..."
-  brew cask install google-chrome
-fancy_echo "Installing Firefox ..."
-  brew cask install firefox
-fancy_echo "Installing Text Expander ..."
-  brew cask install textexpander
-fancy_echo "Installing Dash ..."
-  brew cask install dash
-fancy_echo "Installing Flux ..."
-  brew cask install flux
-fancy_echo "Installing Slack ..."
-  brew cask install slack
-fancy_echo "Installing Spotify ..."
-  brew cask install spotify
-fancy_echo "Installing Transmission ..."
-  brew cask install transmission
-fancy_echo "Installing calibre ..."
-  brew cask install calibre
-fancy_echo "Installing lftp ..."
-  brew install lftp
-fancy_echo "Installing ack ..."
-  brew install ack
-fancy_echo "Installing mp3blaster..."
-  brew install mp3blaster
-fancy_echo "Installing mutt..."
-  brew install mutt
-fancy_echo "Installing vlc ..."
-  brew cask install vlc
-fancy_echo "Installing pip ..."
-  sudo easy_install pip
-fancy_echo "Installing ffmpeg ..."
-  brew install ffmpeg
-fancy_echo "Installing ncurses ..."
-  brew install ncurses
-fancy_echo "Installing latest java ..."
-  brew cask install java
-fancy_echo "Installing iterm ..."
-  brew cask install iterm
-fancy_echo "Installing slack ..."
-  brew cask install slack
+#Paige config for laptop setup
+brew bundle --file=- <<EOF
+  cask "evernote"
+  cask "skype"
+  cask "filezilla"
+  cask "bettertouchtool"
+  cask "dropbox"
+  cask "virtualbox"
+  cask "atom"
+  cask "firefox"
+  cask "textexpander"
+  cask "dash"
+  cask "flux"
+  cask "slack"
+  cask "spotify"
+  cask "transmission"
+  cask "calibre"
+  cask "vlc"
+  cask "java"
+  cask "iterm"
+  cask "slack"
+  cask "steam"
+
+  brew "lftp"
+  brew "ack"
+  brew "mp3blaster"
+  brew "mutt"
+  brew "ffmpeg"
+  brew "ncurses"
+
+  ###ochin specific
+  brew "openconnect"
+  brew "silverlight"
+EOF
+
+
 ### end mac-components/cask-apps
 
-###ochin specific
-fancy_echo "Install openconnect ..."
-  brew install openconnect
-fancy_echo "Install silverlight ..."
-  brew install silverlight
 
-fancy_echo "Downloading Maximum Awesome ..."
-  git clone https://github.com/paigetech/maximum-awesome.git
-fancy_echo "Installing Maximum Awesome ..."
-  cd maximum-awesome && make
+git clone https://github.com/paigetech/maximum-awesome.git
+cd maximum-awesome && make
 ### end mac-components/maximum-awesome
 
-fancy_echo "Downloading Geeknote ..."
-  git clone git clone git://github.com/VitaliyRodnenko/geeknote.git
-fancy_echo "Installing Geeknote ..."
-  cd geeknote && sudo python setup.py install
+git clone git clone git://github.com/VitaliyRodnenko/geeknote.git
+cd geeknote && sudo python setup.py install
 ### end mac-components/geek-note
